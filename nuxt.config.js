@@ -3,6 +3,10 @@ import pkg from './package'
 export default {
   mode: 'universal',
 
+  env: {
+    baseUrl: "http://localhost:3001"
+  },
+
   /*
   ** Headers of the page
   */
@@ -14,7 +18,8 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'}
     ]
   },
 
