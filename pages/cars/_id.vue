@@ -4,10 +4,17 @@
     <p>
       {{ currentCar.model }}
     </p>
+
+    <input v-model="brand" type="text" placeholder="brand">
+    <input v-model="model" type="text" placeholder="model">
+
+    <button v-on:click="edit">Edit</button>
     <button v-on:click="deleteCar">Delete</button>
+
     <nuxt-link :to="{name: 'cars'}">
       <button>Back</button>
     </nuxt-link>
+
   </div>
 </template>
 
@@ -17,17 +24,27 @@
   export default {
     methods: {
 
-      async deleteCar() {
+      edit: function () {
+        axios.put(`/cars/${this.currentCar.id}`, {
+          brand: this.brand,
+          model: this.model
+        })
+          .then(function () {
+            location.reload();
+          });
+      },
+
+      deleteCar: function () {
         // const response = await axios.delete(`/cars/${this.currentCar.id}`);
 
-        axios.delete(`/cars/${this.currentCar.id}`).then(function(){
-          window.location.replace("http://localhost:3000/cars")
-        });
-      }
+        axios.delete(`/cars/${this.currentCar.id}`).then(function () {
+          window.location.replace("http://localhost:3000/cars");
+        })
+      },
     },
 
-    async asyncData({ params }) {
-      const { data } = await axios.get(`/cars/${params.id}`);
+    async asyncData({params}) {
+      const {data} = await axios.get(`/cars/${params.id}`);
 
       return {
         currentCar: data

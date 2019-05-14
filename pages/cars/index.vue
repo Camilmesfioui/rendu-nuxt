@@ -20,11 +20,14 @@
   export default {
     methods: {
       insert: function () {
-        axios.post('/cars', { brand: this.brand , model: this.model })
-          .then(function(response){
-            location.reload();
-          });
-      }
+        axios.post('/cars', {
+          brand: this.brand,
+          model: this.model
+        })
+        .then(function(response){
+          location.reload();
+        });
+      },
     },
 
     async asyncData() {
