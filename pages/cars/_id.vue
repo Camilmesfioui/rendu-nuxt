@@ -4,8 +4,9 @@
     <p>
       {{ currentCar.model }}
     </p>
+    <button v-on:click="deleteCar">Delete</button>
     <nuxt-link :to="{name: 'cars'}">
-      <button>Retour</button>
+      <button>Back</button>
     </nuxt-link>
   </div>
 </template>
@@ -14,6 +15,17 @@
   import axios from "~/plugins/axios";
 
   export default {
+    methods: {
+
+      async deleteCar() {
+        // const response = await axios.delete(`/cars/${this.currentCar.id}`);
+
+        axios.delete(`/cars/${this.currentCar.id}`).then(function(){
+          window.location.replace("http://localhost:3000/cars")
+        });
+      }
+    },
+
     async asyncData({ params }) {
       const { data } = await axios.get(`/cars/${params.id}`);
 
