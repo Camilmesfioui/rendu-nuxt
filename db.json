@@ -1,9 +1,29 @@
 {
   "cars": [
-    { "id": 1, "brand": "Jaguar", "model": "Type E" },
-    { "id": 2, "brand": "Lamborghini", "model": "Mjura" },
-    { "id": 3, "brand": "Bugatti", "model": "Atlantic" },
-    { "id": 4, "brand": "Facel Vega", "model": "Facel II" },
-    { "id": 5, "brand": "Alfa Romeo", "model": "33 Stradale" }
+    {
+      "id": 1,
+      "brand": "Jaguar",
+      "model": "Type E"
+    },
+    {
+      "id": 2,
+      "brand": "Lamborghini",
+      "model": "Mjura"
+    },
+    {
+      "id": 3,
+      "brand": "Bugatti",
+      "model": "Atlantic"
+    },
+    {
+      "id": 4,
+      "brand": "Facel Vega",
+      "model": "Facel II"
+    },
+    {
+      "id": 5,
+      "brand": "Alfa Romeo",
+      "model": "33 Stradale"
+    }
   ]
 }
