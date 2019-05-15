@@ -43,11 +43,15 @@
           model: this.model
         };
 
-        await axios.post('/cars', car)
-
-        this.cars.push(car)
+        await axios.post('/cars', car);
+        this.cars = await this.getCars();
 
       },
+
+      async getCars() {
+        const { data } = await axios.get('/cars');
+        return data;
+      }
     },
 
     async asyncData() {
@@ -67,6 +71,7 @@
         brand: null,
         model: null
       }
-    }
+    },
+
   }
 </script>
