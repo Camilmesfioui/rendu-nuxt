@@ -44,6 +44,8 @@
       const {data} = await axios.get(`/cars/${params.id}`);
 
       return {
+        brand: data.brand,
+        model: data.model,
         currentCar: data
       }
     },
@@ -56,7 +58,7 @@
 
     head() {
       return {
-        title: `${this.currentCar.brand} | Mon site internet`,
+        title: `${this.currentCar.brand} | Cars`,
         meta: [
           {}
         ]
