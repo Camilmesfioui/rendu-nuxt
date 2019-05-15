@@ -23,7 +23,7 @@
           <input v-model="model" type="text" placeholder="model" class="form-control">
 
           <button v-on:click="edit" class="btn btn-warning">Edit car infos</button>
-          <button v-on:click="deleteCar" class="btn btn-danger">Delete car</button>
+          <button v-on:click="deleteCar" class="btn btn-danger" data-dismiss="modal">Delete car</button>
         </div>
       </div>
     </div>
