@@ -13,7 +13,9 @@
           <div class="modal-content">
             <input v-model="brand" type="text" placeholder="brand" class="form-control">
             <input v-model="model" type="text" placeholder="model" class="form-control">
-            <button v-on:click="insert" class="btn btn-primary">Create Car</button>
+            <input v-model="imgLink" type="text" placeholder="img link" class="form-control">
+            <textarea v-model="detail" placeholder="detail" class="form-control"></textarea>
+            <button v-on:click="insert" class="btn btn-primary" data-dismiss="modal">Create Car</button>
           </div>
         </div>
       </div>
@@ -60,7 +62,9 @@
       async insert () {
         const car = {
           brand: this.brand,
-          model: this.model
+          model: this.model,
+          detail: this.detail,
+          imgLink: this.imgLink
         };
 
         await axios.post('/cars', car);
@@ -90,7 +94,9 @@
         title: "My Car List",
         cars: [],
         brand: null,
-        model: null
+        model: null,
+        detail: null,
+        imgLink: null
       }
     },
 
