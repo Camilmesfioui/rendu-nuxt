@@ -1,21 +1,6 @@
 {
   "cars": [
     {
-      "brand": "fftest",
-      "model": "tsst",
-      "id": 1
-    },
-    {
-      "brand": "fazf",
-      "model": "fefe",
-      "id": 4
-    },
-    {
-      "brand": "fazf",
-      "model": "a",
-      "id": 5
-    },
-    {
       "brand": "fazf",
       "model": "a",
       "id": 6
