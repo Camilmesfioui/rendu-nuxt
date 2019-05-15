@@ -34,12 +34,9 @@
           });
       },
 
-      deleteCar: function () {
-        // const response = await axios.delete(`/cars/${this.currentCar.id}`);
-
-        axios.delete(`/cars/${this.currentCar.id}`).then(function () {
-          window.location.replace("http://localhost:3000/cars");
-        })
+      async deleteCar() {
+        await axios.delete(`/cars/${this.currentCar.id}`);
+        this.$router.push({name: 'cars'});
       },
     },
 
